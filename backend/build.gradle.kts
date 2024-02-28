@@ -28,7 +28,6 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    runtimeOnly("io.micrometer:micrometer-registry-prometheus")
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
@@ -38,7 +37,6 @@ dependencies {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
-        freeCompilerArgs += "-Xjsr305=strict"
         jvmTarget = "21"
     }
 }
@@ -48,9 +46,11 @@ tasks.withType<Test> {
 }
 
 springBoot {
+    mainClass.set("info.deckermail.vehicle_administration.backend.BackendApplication")
     buildInfo()
 }
 
 tasks.withType<BootJar> {
     archiveFileName.set("Backend.jar")
+    exclude("application.yml")
 }

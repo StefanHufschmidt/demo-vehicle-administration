@@ -1,0 +1,12 @@
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://datastore:5432/va
+    username: postgres
+    password: someSuperSecurePwd
+  jpa:
+    generate-ddl: on
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect

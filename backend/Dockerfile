@@ -1,7 +1,15 @@
-FROM gradle:8.6.0-jdk21 AS build
+FROM gradle:8.6.0-jdk21 AS installdeps
 WORKDIR /home/gradle/project
-COPY ./* /home/gradle/project
-RUN ./gradlew build -x test
+COPY ./build.gradle.kts /home/gradle/project
+COPY ./settings.gradle.kts /home/gradle/project
+COPY ./gradlew /home/gradle/project
+COPY ./gradlew.bat /home/gradle/project
+COPY ./gradle /home/gradle/project
+RUN gradle dependencies
+
+FROM installdeps AS build
+COPY . /home/gradle/project
+RUN gradle build -x test
 
 FROM eclipse-temurin:21.0.2_13-jre AS run
 ENV WORKDIR /Backend/
