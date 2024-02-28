@@ -1,7 +1,7 @@
 export const useApi = () => {
     const controller = new AbortController();
-    // const baseUrl = `${window.location.protocol}//${window.location.host}/api`;
-    const baseUrl = 'http://localhost:8080/api'; // TODO: Use API from above after testing
+    const baseUrl = `${window.location.protocol}//${window.location.host}/api`; // Use this for running the docker compose
+    // const baseUrl = 'http://localhost:8080/api'; // Use this for testing locally when running frontend + backend without Docker
     const fetchUnauthenticated = async <T>(
         url: string,
         method: 'GET' | 'POST' | 'DELETE',
@@ -16,7 +16,7 @@ export const useApi = () => {
         });
         const statusCode = response.status;
         if (statusCode >= 400) {
-            throw Error(`${baseUrl}${url} returned ${statusCode}`);
+            throw response;
         }
 
         const bodyString = await response.text();

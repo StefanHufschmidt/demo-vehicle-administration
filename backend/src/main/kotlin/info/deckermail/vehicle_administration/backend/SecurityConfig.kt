@@ -28,6 +28,7 @@ class SecurityConfig {
             .sessionManagement { it.sessionCreationPolicy(SessionCreationPolicy.STATELESS) } //No Session pls
             .authorizeHttpRequests {
                 it.requestMatchers("/login").permitAll()
+                    .requestMatchers("/register/**").permitAll()
                     .requestMatchers("/web/**").authenticated()
                     .dispatcherTypeMatchers(DispatcherType.ERROR).permitAll()
             }

@@ -9,12 +9,17 @@ import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.utility.DockerImageName
 
 @TestConfiguration(proxyBeanMethods = false)
-class TestBackendApplication {
+internal class TestBackendApplication {
 
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            SpringApplication.from(BackendApplication::main).with(TestBackendApplication::class).run(*args)
+            SpringApplication.from(BackendApplication::main)
+                .with(
+                    TestBackendApplication::class,
+                    MailHogConfig::class,
+                )
+                .run(*args)
         }
     }
 

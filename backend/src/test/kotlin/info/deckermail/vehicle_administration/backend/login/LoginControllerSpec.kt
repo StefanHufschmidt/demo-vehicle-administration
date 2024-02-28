@@ -15,6 +15,7 @@ import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.post
 
 @WebMvcTest(
+    controllers = [LoginController::class],
     excludeAutoConfiguration = [SecurityAutoConfiguration::class]
 )
 internal class LoginControllerSpec {

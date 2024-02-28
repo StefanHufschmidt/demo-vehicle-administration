@@ -8,4 +8,5 @@ import java.util.*
 interface UserRepository: CrudRepository<UserEntity, UUID> {
 
     fun findByUsername(username: String): UserEntity?
+    fun existsByUsername(username: String): Boolean
 }

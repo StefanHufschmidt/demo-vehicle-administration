@@ -39,8 +39,11 @@ dependencies {
     // Misc
     implementation("org.springframework.boot:spring-boot-starter-mail")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
     // Test
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.1")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.testcontainers:junit-jupiter")

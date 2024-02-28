@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="236ba934-1820-4824-8acf-3397e282ef01" name="Changes" comment="Adds test for input validation of login payload">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/kotlin/info/deckermail/vehicle_administration/backend/CorsConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/kotlin/info/deckermail/vehicle_administration/backend/SecurityConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/kotlin/info/deckermail/vehicle_administration/backend/users/RoleEntity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/kotlin/info/deckermail/vehicle_administration/backend/users/RoleRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/kotlin/info/deckermail/vehicle_administration/backend/users/StartupRoleInitializer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/kotlin/info/deckermail/vehicle_administration/backend/users/UserDetailServiceImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/kotlin/info/deckermail/vehicle_administration/backend/users/UserEntity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/kotlin/info/deckermail/vehicle_administration/backend/users/UserRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/kotlin/info/deckermail/vehicle_administration/backend/web/SecuredController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/kotlin/info/deckermail/vehicle_administration/backend/FullIntegrationTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/kotlin/info/deckermail/vehicle_administration/backend/SecuredControllerIT.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/kotlin/info/deckermail/vehicle_administration/backend/users/UserRepositorySpec.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-frontend/src/http/useAuthenticatedApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/kotlin/info/deckermail/vehicle_administration/backend/login/LoginController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/info/deckermail/vehicle_administration/backend/login/LoginController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/kotlin/info/deckermail/vehicle_administration/backend/login/LoginData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/info/deckermail/vehicle_administration/backend/login/LoginData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/kotlin/info/deckermail/vehicle_administration/backend/BackendApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/kotlin/info/deckermail/vehicle_administration/backend/BackendApplicationTests.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/kotlin/info/deckermail/vehicle_administration/backend/login/LoginControllerSpec.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/kotlin/info/deckermail/vehicle_administration/backend/login/LoginControllerSpec.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-frontend/src/vehicleList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-frontend/src/vehicleList.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="236ba934-1820-4824-8acf-3397e282ef01" name="Changes" comment="Adds registration requests as first registration step for new users" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,15 +40,20 @@
       <list>
         <option value="Dockerfile" />
         <option value="TypeScript JSX File" />
-        <option value="Kotlin Data Class" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin Class" />
         <option value="TypeScript File" />
         <option value="Kotlin Annotation" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Stefan Decker &lt;github@deckermail.info&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="KubernetesApiProvider">{
@@ -108,6 +89,8 @@
     "Gradle.Download Sources.executor": "Run",
     "Gradle.LoginControllerSpec.executor": "Run",
     "Gradle.LoginControllerSpec.should be able to login with correct payload$Backend_test.executor": "Run",
+    "Gradle.RegistrationRequestControllerSpec.executor": "Run",
+    "Gradle.RegistrationRequestControllerSpec.should return conflict status code for thrown IllegalArgumentException$Backend_test.executor": "Run",
     "Gradle.SecuredControllerIT.executor": "Run",
     "Gradle.SecuredControllerIT.should be blocked for unauthenticated requests$Backend_test.executor": "Run",
     "Gradle.SecuredControllerIT.should be forbidden for unauthenticated requests$Backend_test.executor": "Run",
@@ -130,7 +113,7 @@
     "Spring Boot.BackendApplication.executor": "Run",
     "Spring Boot.TestBackendApplication.executor": "Run",
     "Spring Boot.TestBackendApplicationKt.executor": "Run",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "temurin-21",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -151,6 +134,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Development\GitRepos\VehicleAdministration\web-frontend\src\pages" />
       <recent name="C:\Development\GitRepos\VehicleAdministration\web-frontend\src\auth" />
     </key>
     <key name="CreateKotlinClassDialog.RecentsKey">
@@ -166,8 +150,8 @@
       <command value="gradle build -x test" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'Backend.test'">
-    <configuration name="LoginControllerSpec" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.RegistrationRequestControllerSpec">
+    <configuration name="RegistrationRequestControllerSpec" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/Backend" />
@@ -180,7 +164,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;info.deckermail.vehicle_administration.backend.login.LoginControllerSpec&quot;" />
+            <option value="&quot;info.deckermail.vehicle_administration.backend.register.RegistrationRequestControllerSpec&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="RegistrationRequestControllerSpec.should return conflict status code for thrown IllegalArgumentException$Backend_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Backend" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;info.deckermail.vehicle_administration.backend.register.RegistrationRequestControllerSpec.should return conflict status code for thrown IllegalArgumentException$Backend_test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -261,30 +269,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="UserRepositorySpec" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/Backend" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;info.deckermail.vehicle_administration.backend.users.UserRepositorySpec&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -304,10 +288,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Tests in 'Backend.test'" />
+        <item itemvalue="Gradle.RegistrationRequestControllerSpec" />
+        <item itemvalue="Gradle.RegistrationRequestControllerSpec.should return conflict status code for thrown IllegalArgumentException$Backend_test" />
         <item itemvalue="Gradle.SecuredControllerIT" />
         <item itemvalue="Gradle.Tests in 'info.deckermail.vehicle_administration.backend'" />
-        <item itemvalue="Gradle.UserRepositorySpec" />
-        <item itemvalue="Gradle.LoginControllerSpec" />
       </list>
     </recent_temporary>
   </component>
@@ -331,7 +315,7 @@
       <workItem from="1708869656131" duration="2610000" />
       <workItem from="1708872419748" duration="1263000" />
       <workItem from="1708928275065" duration="23032000" />
-      <workItem from="1709020846022" duration="6458000" />
+      <workItem from="1709020846022" duration="12399000" />
     </task>
     <task id="LOCAL-00001" summary="Adds .gitignore">
       <option name="closed" value="true" />
@@ -397,7 +381,47 @@
       <option name="project" value="LOCAL" />
       <updated>1708954375166</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Adds basic authentication with users from DB">
+      <option name="closed" value="true" />
+      <created>1709027912406</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1709027912406</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Adds basic authentication with users from DB">
+      <option name="closed" value="true" />
+      <created>1709027943032</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1709027943032</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Adds basic authentication with users from DB">
+      <option name="closed" value="true" />
+      <created>1709028025772</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1709028025772</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Adds registration requests as first registration step for new users">
+      <option name="closed" value="true" />
+      <created>1709116039328</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1709116039328</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Adds registration requests as first registration step for new users">
+      <option name="closed" value="true" />
+      <created>1709116134228</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1709116134228</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,6 +439,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Adds .gitignore" />
     <MESSAGE value="Adds backend with Spring initializer" />
     <MESSAGE value="Adds web-frontend as React app in TypeScript" />
@@ -422,7 +447,10 @@
     <MESSAGE value="Adjusts config to run within docker-compose properly" />
     <MESSAGE value="Adds simple dummy login function" />
     <MESSAGE value="Adds test for input validation of login payload" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adds test for input validation of login payload" />
+    <MESSAGE value="Adds basic authentication with users from DB" />
+    <MESSAGE value="Adds registration requests as first registration step for new users" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adds registration requests as first registration step for new users" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

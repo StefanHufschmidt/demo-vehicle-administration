@@ -1,5 +1,5 @@
-import {useUser} from "./auth/UserContext";
-import {useAuthenticatedApi} from "./http/useAuthenticatedApi";
+import {useUser} from "../auth/UserContext";
+import {useAuthenticatedApi} from "../http/useAuthenticatedApi";
 import {useEffect} from "react";
 
 export function VehicleList() {

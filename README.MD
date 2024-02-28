@@ -15,6 +15,9 @@ Docker containers together with a PostgreSQL database.
 You should be able to access the Vehicle Administration App via http://localhost:9090.
 As admin user I already added `MrT` with the obvious password of `aTeam` related to the TV show.
 
+Any e-mail sent will be automatically fetched by the MailHog. You can access those e-mails via
+the MailHogs web-frontend running at http://localhost:8025.
+
 When you change something inside the code it requires to rebuild the related Docker image of the related service 
 for the change to become available to another Docker Compose run.
 

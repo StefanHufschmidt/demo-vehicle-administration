@@ -1,6 +1,6 @@
 import {useState} from "react";
-import {useUser} from "./auth/UserContext";
-import {useApi} from "./http/useApi";
+import {useUser} from "../auth/UserContext";
+import {useApi} from "../http/useApi";
 
 export function Login() {
     const user = useUser();
@@ -39,6 +39,8 @@ export function Login() {
                 <input type="password" name="password" placeholder="password" />
                 <button type="submit">Login</button>
             </form>
+            <hr />
+            <a href="/register">Register</a>
         </div>
     );
 }

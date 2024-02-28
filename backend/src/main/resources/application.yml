@@ -13,3 +13,18 @@ spring:
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: mailhog
+    port: 1025
+    test-connection: true
+    username: not_required_for_dev
+    password: not_required_for_dev
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+  threads:
+    virtual:
+      enabled: true

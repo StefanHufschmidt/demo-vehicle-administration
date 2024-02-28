@@ -9,4 +9,4 @@ ADD . /tmp/web-frontend/
 RUN npm run build
 
 FROM nginxinc/nginx-unprivileged:1.25.4 AS run
-COPY --from=build /tmp/web-frontend/build/* /usr/share/nginx/web-frontend/
+COPY --from=build /tmp/web-frontend/build /usr/share/nginx/web-frontend

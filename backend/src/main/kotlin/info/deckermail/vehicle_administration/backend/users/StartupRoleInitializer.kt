@@ -34,5 +34,6 @@ class StartupRoleInitializer(
                 RoleEntity(2, Role.USER.roleValue),
             )
         ))
+        logger.info("Initialized admin user 'MrT' with password 'aTeam'.")
     }
 }

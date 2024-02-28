@@ -12,6 +12,7 @@ services:
       data_network:
         aliases:
           - datastore
+
   Backend:
     image: backend:latest
     container_name: backend
@@ -19,6 +20,7 @@ services:
       SPRING_CONFIG_LOCATION: "/backend/application.yml"
     depends_on:
       - Datastore
+      - MailHog
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -29,9 +31,21 @@ services:
       - ./backend/src/main/resources/application.yml:/backend/application.yml
     networks:
       data_network:
+      mail_network:
       api_network:
         aliases:
           - backend
+
+  MailHog:
+    image: mailhog/mailhog:v1.0.1
+    container_name: mailhog
+    ports:
+      - "8025:8025"
+    networks:
+      mail_network:
+        aliases:
+          - mailhog
+
   WebFrontend:
     image: webfrontend:latest
     container_name: webfrontend
@@ -48,4 +62,5 @@ services:
 
 networks:
   data_network:
+  mail_network:
   api_network:
