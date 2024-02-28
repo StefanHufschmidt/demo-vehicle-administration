@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  Backend:
+    image: backend:latest
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: run
+    ports:
+      - "8080:8080"
+  WebFrontend:
+    image: webfrontend:latest
+    container_name: webfrontend
+    build:
+      context: ./web-frontend
+      dockerfile: Dockerfile
+      target: run
+    ports:
+      - "9090:8080"
+    volumes:
+      - ./web-frontend/nginx.conf:/etc/nginx/conf.d/web-frontend.conf:ro
