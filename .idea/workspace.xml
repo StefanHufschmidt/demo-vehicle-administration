@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="236ba934-1820-4824-8acf-3397e282ef01" name="Changes" comment="Adjusts config to run within docker-compose properly">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/kotlin/info/deckermail/vehicle_administration/backend/login/LoginController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/kotlin/info/deckermail/vehicle_administration/backend/login/LoginData.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-frontend/src/auth/UserContext.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-frontend/src/http/useApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-frontend/src/login.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-frontend/src/routes.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-frontend/src/vehicleList.tsx" afterDir="false" />
+    <list default="true" id="236ba934-1820-4824-8acf-3397e282ef01" name="Changes" comment="Adds simple dummy login function">
+      <change afterPath="$PROJECT_DIR$/backend/src/test/kotlin/info/deckermail/vehicle_administration/backend/login/LoginControllerSpec.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/kotlin/info/deckermail/vehicle_administration/backend/TestBackendApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/kotlin/info/deckermail/vehicle_administration/backend/TestBackendApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-frontend/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/web-frontend/nginx.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/web-frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-frontend/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +78,8 @@
     "Gradle.Backend [build].executor": "Run",
     "Gradle.BackendApplicationTests.contextLoads.executor": "Run",
     "Gradle.Build Backend.executor": "Run",
+    "Gradle.LoginControllerSpec.executor": "Run",
+    "Gradle.LoginControllerSpec.should be able to login with correct payload$Backend_test.executor": "Run",
     "JAR Application.Backend.jar.executor": "Run",
     "Kotlin.TestBackendApplicationKt.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -137,7 +124,55 @@
       <command value="gradle build -x test" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TestBackendApplication">
+  <component name="RunManager" selected="Gradle.LoginControllerSpec.should be able to login with correct payload$Backend_test">
+    <configuration name="LoginControllerSpec" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Backend" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;info.deckermail.vehicle_administration.backend.login.LoginControllerSpec&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="LoginControllerSpec.should be able to login with correct payload$Backend_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Backend" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;info.deckermail.vehicle_administration.backend.login.LoginControllerSpec.should be able to login with correct payload$Backend_test&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -187,31 +222,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/web-frontend/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LoginControllerSpec.should be able to login with correct payload$Backend_test" />
+        <item itemvalue="Gradle.LoginControllerSpec" />
         <item itemvalue="Spring Boot.TestBackendApplication" />
         <item itemvalue="Spring Boot.TestBackendApplicationKt" />
         <item itemvalue="Kotlin.TestBackendApplicationKt" />
-        <item itemvalue="npm.start" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -234,7 +251,7 @@
       <workItem from="1708867816906" duration="1777000" />
       <workItem from="1708869656131" duration="2610000" />
       <workItem from="1708872419748" duration="1263000" />
-      <workItem from="1708928275065" duration="12983000" />
+      <workItem from="1708928275065" duration="14722000" />
     </task>
     <task id="LOCAL-00001" summary="Adds .gitignore">
       <option name="closed" value="true" />
@@ -276,7 +293,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708942382016</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Adds simple dummy login function">
+      <option name="closed" value="true" />
+      <created>1708950456833</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708950456833</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Adds simple dummy login function">
+      <option name="closed" value="true" />
+      <created>1708950537415</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708950537415</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +332,8 @@
     <MESSAGE value="Adds web-frontend as React app in TypeScript" />
     <MESSAGE value="Adds simplified Docker builds to show the idea" />
     <MESSAGE value="Adjusts config to run within docker-compose properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusts config to run within docker-compose properly" />
+    <MESSAGE value="Adds simple dummy login function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adds simple dummy login function" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
