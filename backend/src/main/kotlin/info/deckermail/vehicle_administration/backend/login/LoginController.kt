@@ -2,15 +2,18 @@ package info.deckermail.vehicle_administration.backend.login
 
 import jakarta.validation.Valid
 import org.slf4j.LoggerFactory
-import org.springframework.web.bind.annotation.*
+import org.springframework.security.authentication.AuthenticationManager
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@CrossOrigin(origins = [
-    "http://localhost:9090",
-    "http://localhost:3000",
-])
 @RequestMapping("/login")
-class LoginController {
+class LoginController(
+    private val authenticationManager: AuthenticationManager,
+) {
 
     companion object {
         @JvmStatic
@@ -20,5 +23,9 @@ class LoginController {
     @PostMapping
     fun login(@RequestBody @Valid loginData: LoginData) {
         logger.info("Login attempt for user ${loginData.username}.")
+        val authenticationRequest =
+            UsernamePasswordAuthenticationToken.unauthenticated(
+                loginData.username, loginData.password)
+        authenticationManager.authenticate(authenticationRequest)
     }
 }

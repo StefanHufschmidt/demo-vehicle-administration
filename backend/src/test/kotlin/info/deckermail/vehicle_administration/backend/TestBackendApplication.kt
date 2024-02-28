@@ -1,7 +1,6 @@
 package info.deckermail.vehicle_administration.backend
 
 import org.springframework.boot.SpringApplication
-import org.springframework.boot.fromApplication
 import org.springframework.boot.test.context.TestConfiguration
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection
 import org.springframework.boot.with
