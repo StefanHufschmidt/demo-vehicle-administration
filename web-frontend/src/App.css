@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+.Login-layout {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Login-form {
+  width: 50rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Login-form input {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.Login-form button {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.Login-error {
+  color: red;
+}

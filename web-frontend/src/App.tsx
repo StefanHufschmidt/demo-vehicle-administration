@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import {useNavigate, useRoutes} from 'react-router-dom';
 import './App.css';
+import routes from "./routes";
+import {UserContext, UserData} from "./auth/UserContext";
+
+const useUserInTab = (): UserData => {
+
+  const [basicAuth, setBasicAuth] = useState<string>();
+  const [username, setUsername] = useState<string>();
+  const navigate = useNavigate();
+
+  const login = (newUsername: string, password: string) => {
+    setUsername(newUsername);
+    setBasicAuth('Basic ' + btoa(`${newUsername}:${password}`));
+    navigate('/');
+  };
+
+  const logout = () => {
+    setUsername(undefined);
+    setBasicAuth(undefined);
+    navigate('/login');
+  }
+
+  return {
+    username,
+    basicAuth,
+    login,
+    logout
+  }
+};
 
 function App() {
+  const content = useRoutes(routes);
+  const user = useUserInTab()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={user}>
+      {content}
+    </UserContext.Provider>
   );
 }
 

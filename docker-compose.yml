@@ -28,7 +28,10 @@ services:
     volumes:
       - ./backend/src/main/resources/application.yml:/backend/application.yml
     networks:
-      - data_network
+      data_network:
+      api_network:
+        aliases:
+          - backend
   WebFrontend:
     image: webfrontend:latest
     container_name: webfrontend
@@ -40,6 +43,9 @@ services:
       - "9090:8080"
     volumes:
       - ./web-frontend/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      api_network:
 
 networks:
   data_network:
+  api_network:

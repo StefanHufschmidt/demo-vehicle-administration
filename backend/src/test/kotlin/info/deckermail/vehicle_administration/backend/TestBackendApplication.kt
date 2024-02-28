@@ -1,5 +1,6 @@
 package info.deckermail.vehicle_administration.backend
 
+import org.springframework.boot.SpringApplication
 import org.springframework.boot.fromApplication
 import org.springframework.boot.test.context.TestConfiguration
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection
@@ -11,6 +12,13 @@ import org.testcontainers.utility.DockerImageName
 @TestConfiguration(proxyBeanMethods = false)
 class TestBackendApplication {
 
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            SpringApplication.from(BackendApplication::main).with(TestBackendApplication::class).run(*args)
+        }
+    }
+
     @Bean
     @ServiceConnection
     fun postgresContainer(): PostgreSQLContainer<*> {
@@ -19,6 +27,4 @@ class TestBackendApplication {
 
 }
 
-fun main(args: Array<String>) {
-    fromApplication<BackendApplication>().with(TestBackendApplication::class).run(*args)
-}
+
